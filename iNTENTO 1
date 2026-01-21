@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ChatGPT Sencillo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        #chat {
+            background: white;
+            padding: 15px;
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>ChatGPT</h2>
+
+    <div id="chat"></div>
+
+    <input type="text" id="mensaje" placeholder="Escribe algo...">
+    <button onclick="responder()">Enviar</button>
+
+    <script>
+        function responder() {
+            const chat = document.getElementById("chat");
+            const mensaje = document.getElementById("mensaje").value;
+
+            if (mensaje === "") return;
+
+            chat.innerHTML += "<p><strong>Tú:</strong> " + mensaje + "</p>";
+            chat.innerHTML += "<p><strong>ChatGPT:</strong> Hola, soy un ChatGPT sencillo 🤖</p>";
+
+            document.getElementById("mensaje").value = "";
+            chat.scrollTop = chat.scrollHeight;
+        }
+    </script>
+
+</body>
+</html>
